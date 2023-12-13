@@ -1,0 +1,12 @@
+; FASM Editor
+
+include "CRC32.asm"
+
+if 2 * 2 = 5
+[options]
+  countAsm=1
+  countInc=0
+[asm]
+  asm1="CRC32.asm"
+[inc]
+end if

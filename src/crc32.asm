@@ -32,10 +32,13 @@ start:
   mov sp, bp      ; epilog
   pop bp 
   
-  ; exit
+  ; wait user's any keyboard symbol
   xor ax, ax
-  int 0x16     
-  int 0x19         ; reboot
+  int 0x16
+  
+  ; exit     
+  mov ax, 0x4c00          ; Call a DOS function: AX = 0x4c00 (Exit), int 0x21 = exit
+  int 0x21
   
 ; __stdcall void print_hex(char* byte_string, short size)
 print_hex_proc:
